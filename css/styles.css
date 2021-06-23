@@ -10,11 +10,13 @@ GLOBAL CSS
 =============================== */
 
 :root {
-  --main-color: #7857fe;
+  /* --main-color: #7857fe; */
+  --main-color: #038090;
   --color-1: #e91e63;
   --color-2: #f5ae10;
   --color-3: #09d69c;
-  --bg-dark: #2b2c2f;
+  --bg-dark: #1b2432;
+  /* --bg-dark: #056172; */
   --main-to-dark-color: var(--main-color);
   --dark-to-main-color: var(--bg-dark);
   --shadow-black-100: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -124,6 +126,7 @@ body.dark {
 img {
   max-width: 100%;
   vertical-align: middle;
+  border-radius: 40px;
 }
 ul {
   list-style: none;
@@ -321,7 +324,7 @@ NAVBAR
 =============================== */
 
 .navbar {
-  background-color: transparent;
+  background-color: var(--main-to-dark-color);
   padding: 10px 0;
   transition: all 0.5s ease;
 }
@@ -377,10 +380,14 @@ NAVBAR
 Home Section
 =============================== */
 .home {
-  min-height: 100vh;
+  margin: 7vh 0 13vh 0;
+  min-height: 80vh;
   padding: 150px 0;
   background-color: var(--main-to-dark-color);
-  border-radius: 0 0 200px 0;
+  /* border-radius: 0 0 200px 0; */
+  /* border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; */
+  /* border-radius: 100% 0% 100% 0% / 0% 40% 75% 100%; */
+  /* border-radius: 100% 0% 100% 0% / 26% 86% 14% 74%; */
   position: relative;
   z-index: 1;
   overflow-x: hidden;
@@ -427,7 +434,6 @@ Home Section
   max-width: 250px;
   width: 100%;
   box-shadow: var(--shadow-black-100);
-  border-radius: 32px;
   animation: bounceTop_01 3s ease infinite;
 }
 
@@ -527,6 +533,7 @@ Features Section
   box-shadow: var(--shadow-black-100);
   margin: 15px;
   padding: 30px;
+  height: 275px;
   border-radius: 10px;
   text-align: center;
   position: relative;
@@ -637,7 +644,6 @@ Fun Facts Section
   max-width: 250px;
   width: 100%;
   box-shadow: var(--shadow-black-100);
-  border-radius: 32px;
   animation: bounceTop_01 3s ease infinite;
 }
 
@@ -905,13 +911,14 @@ Pricing Plan Section
 
 .pricing-plan .pricing-header {
   padding: 20px 30px;
-  border-bottom: 1px solid var(--black-alpha-100);
+  border-bottom: 1px solid var(--main-color);
+  background-color: var(--main-color);
 }
 
 .pricing-plan .pricing-header h3 {
   text-align: center;
   font-size: 30px;
-  color: var(--black-900);
+  /* color: var(--black-900); */
   font-weight: 500;
   text-transform: capitalize;
   margin: 0;
@@ -956,7 +963,7 @@ Pricing Plan Section
   font-weight: 300;
   color: var(--black-400);
   padding: 10px 0 10px 30px;
-  border-bottom: 1px solid var(--black-alpha-100);
+  border-bottom: 1px solid var(--main-color);
   line-height: 26px;
   position: relative;
 }
@@ -987,8 +994,13 @@ Team Member Section
 .team-item {
   margin: 15px;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 50%;
   box-shadow: var(--shadow-black-100);
+  text-align: center;
+}
+
+.team-item img {
+  border-radius: 50%;
 }
 
 .team-item h3 {
@@ -1199,7 +1211,7 @@ Footer Section
   padding: 20px 0;
   text-align: center;
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(13, 32, 37, 0.5);
   font-weight: 300;
   margin: 50px 0 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -1211,8 +1223,8 @@ Toggle Theme Start - Light & Dark Mode
 
 .toggle-theme {
   position: fixed;
-  right: 0;
-  top: calc(50% - 20px);
+  right: 15px;
+  top: 15px;
   height: 40px;
   width: 40px;
   background-color: var(--dark-to-main-color);
@@ -1293,6 +1305,13 @@ Responsive
 }
 
 @media (max-width: 767px) {
+  .home {
+    min-height: 80vh;
+    margin: 6vh 0 13vh 0;
+    padding: 20px 0;
+    border-radius: 0 0 200px 0;
+  }
+
   .home-text {
     margin-bottom: 80px;
   }
@@ -1312,9 +1331,19 @@ Responsive
   .fun-facts .section-title h2 {
     text-align: center;
   }
+
+  .toggle-theme {
+    right: 35px;
+    top: 15px;
+  }
 }
 
 @media (max-width: 575px) {
+
+  .home-text{
+    padding-top:20px;
+  }
+
   .home-text h1 {
     font-size: 30px;
   }
@@ -1326,4 +1355,12 @@ Responsive
   .section-title h2 {
     font-size: 30px;
   }
+
+  .toggle-theme {
+    right: 75px;
+    top: 15px;
+  }
+
+  .features .feature-item {
+    margin: 40px !important;
 }
